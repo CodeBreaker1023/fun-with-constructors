@@ -233,9 +233,9 @@ var john = {
     job: 'teacher', 
     presentation: function(style, timeOfDay) {
         if (style === 'formal') {
-            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m a ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old.');
         } else if (style === 'friendly') {
-            console.log('Hey! What\'s up? I\'m a ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+            console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
         } 
     }
 }
@@ -247,3 +247,11 @@ var emily = {
 };
 
 john.presentation('formal', 'morning');
+// Method borrowing = using the john method and calling on emily onject
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// john.presentation.apply(emily, 'friendly', 'afternoon');
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
