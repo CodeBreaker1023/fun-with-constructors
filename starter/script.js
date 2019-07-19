@@ -184,7 +184,7 @@ interviewQuestion('teacher')('Mark');
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck);
 })(5);
-*/
+
 
 // Closures
 
@@ -210,22 +210,6 @@ retirementIceland = retirement(1990);
 
 // Challenge: Write a closure using our interviewQuestion()
 
-/*function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function(name) {
-            console.log(name + ', can you please explain what UX design is?');
-        } 
-    } else if (job === 'teacher') {
-        return function(name) {    
-            console.log('What subject do you teach, ' + name + '?');
-        }
-    } else {
-        return function(name) {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
-} */
-
 function interviewQuestion(job) {
     return function(name) {
         if (job === 'designer') {
@@ -239,3 +223,21 @@ function interviewQuestion(job) {
 }
 
 interviewQuestion('teacher')('John');
+*/
+
+// Bind, Call, and Apply
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher', 
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m a ' + this.name + ', I\'m a ' + this.job + 'and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m a ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        } 
+    }
+}
+
+john.presentation('formal', 'morning');
