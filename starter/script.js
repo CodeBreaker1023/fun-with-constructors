@@ -233,7 +233,7 @@ var john = {
     job: 'teacher', 
     presentation: function(style, timeOfDay) {
         if (style === 'formal') {
-            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m a ' + this.name + ', I\'m a ' + this.job + 'and I\'m ' + this.age + ' years old.');
+            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m a ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
         } else if (style === 'friendly') {
             console.log('Hey! What\'s up? I\'m a ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
         } 
