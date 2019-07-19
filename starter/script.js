@@ -254,4 +254,30 @@ john.presentation.call(emily, 'friendly', 'afternoon');
 
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
+//carrying = creating a function based on another function with some preset parameters 
 johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily,'formal');
+emilyFormal('afternoon');
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        //Remember push adds data to the end of an array
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function calculateAge(el) {
+    return 2016 - el;
+}
+
+function isFullAge(el) {
+    return el >= limit;
+}
+
+var ages = arrayCalc(years,calculateAge);
