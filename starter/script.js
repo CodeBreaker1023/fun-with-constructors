@@ -95,7 +95,7 @@ change(age, obj);
 
 console.log(age); //27 - age is a primitive, so it does not change. a = 30 in the change function is only 30 within the function. Outisde the function, age = 27
 console.log(obj.city); //San Francisco - we are not passing the object in the function, but rather the reference that points to the original object. This is why it is reflected outside the function
-*/
+
 
 // Passing Functions as Arguments
 
@@ -132,3 +132,33 @@ var fullAges = arrayCalc(ages, isFullAge);
 console.log(fullAges);
 var rates = arrayCalc(ages, maxHeartRate);
 console.log(rates);
+*/
+
+// Functions returning functions 
+
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        } 
+    } else if (job === 'teacher') {
+        return function(name) {    
+            console.log('What subject do you teach, ' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+} 
+
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('John');
+
+var designerQuestion = interviewQuestion('designer');
+designerQuestion('John');
+designerQuestion('Jane');
+designerQuestion('Jake');
+designerQuestion('Jules');
+
+interviewQuestion('teacher')('Mark');
