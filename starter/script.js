@@ -282,5 +282,5 @@ interviewQuestion('teacher')('John');
 
 var ages = arrayCalc(years,calculateAge);
 var fullJapan = arrayCalc(ages,isFullAge.bind(this,20));
-console.log(fullJapan);
-console.log(ages);
+// console.log(fullJapan);
+// console.log(ages);
