@@ -280,7 +280,7 @@ interviewQuestion('teacher')('John');
 //     return el >= limit;
 // }
 
-var ages = arrayCalc(years,calculateAge);
-var fullJapan = arrayCalc(ages,isFullAge.bind(this,20));
+// var ages = arrayCalc(years,calculateAge);
+// var fullJapan = arrayCalc(ages,isFullAge.bind(this,20));
 // console.log(fullJapan);
 // console.log(ages);
