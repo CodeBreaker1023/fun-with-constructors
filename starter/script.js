@@ -284,3 +284,12 @@ interviewQuestion('teacher')('John');
 // var fullJapan = arrayCalc(ages,isFullAge.bind(this,20));
 // console.log(fullJapan);
 // console.log(ages);
+
+//Coding challenge
+
+function Question(question, answers, correct) {
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+}
+
